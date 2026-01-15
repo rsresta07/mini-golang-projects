@@ -76,16 +76,18 @@ func main() {
 
 			attemptsLeft--
 
+			// if the guess is the secret number
 			if guess == secretNumber {
 				fmt.Printf("\n%s\n", getInsult("win"))
 				fmt.Printf("It took you %d attempts.\n", maxAttempts-attemptsLeft)
 				break
-			} else if guess < secretNumber {
+			} else if guess < secretNumber { // if it is less than the number
 				fmt.Println(getInsult("too_low"))
-			} else {
+			} else { // if it is greater than the number
 				fmt.Println(getInsult("too_high"))
 			}
 
+			// if they ran out of attempts
 			if attemptsLeft == 0 {
 				// final burn
 				fmt.Printf("\n%s\n", getInsult("game_over"))
@@ -93,6 +95,7 @@ func main() {
 			}
 		}
 
+		// to repeat the game
 		fmt.Print("\nWanna lose again? (y/n): ")
 		var again string
 		fmt.Scan(&again)
