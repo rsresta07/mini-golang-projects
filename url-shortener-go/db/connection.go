@@ -10,6 +10,12 @@ import (
 
 var DB *gorm.DB
 
+// Connect connects to the PostgreSQL database and returns a *gorm.DB object.
+// It also automatically migrates the models to the database.
+// The database connection string is hardcoded to use the 'DB_HOST', 'DB_USER', 'DB_PASSWORD', 'DB_NAME', and 'DB_PORT' environment variables.
+// The SSL mode is disabled.
+// If the connection fails, it returns a non-nil error.
+// If the connection is successful and the migration is also successful, it returns nil.
 func Connect() error {
 	dsn := fmt.Sprintf(
 		"host=%s user=%s password=%s dbname=%s port=%s sslmode=disable",

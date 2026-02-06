@@ -9,6 +9,10 @@ import (
 	"gorm.io/gorm"
 )
 
+// RedirectHandler is a HTTP handler that redirects a request to the long URL associated with the given short code.
+// If the short code does not exist in the database, it returns a 404 status.
+// If an error occurs while querying the database or updating the click count, it returns a 500 status.
+// If the request is successful, it redirects the user to the long URL associated with the given short code.
 func RedirectHandler() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		code := chi.URLParam(r, "code")

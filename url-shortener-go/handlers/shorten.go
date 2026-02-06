@@ -24,6 +24,10 @@ const codeLength = 6
 // Local random generator
 var r = rand.New(rand.NewSource(time.Now().UnixNano()))
 
+// generateCode generates a random code of length codeLength using the
+// provided charset. It is used to generate short codes for URLs.
+// The generated code is a string of length codeLength containing only
+// characters from the charset.
 func generateCode() string {
 	b := make([]byte, codeLength)
 	for i := range b {
@@ -32,6 +36,11 @@ func generateCode() string {
 	return string(b)
 }
 
+// ShortenHandler is an HTTP handler that takes a URL as a request payload and returns a shortened URL.
+// It generates a random short code of length codeLength using the provided charset, and checks if the generated code already exists in the database.
+// If a collision occurs (i.e. the generated code already exists in the database), it retries up to 10 times to generate a new code.
+// If all retries fail, it returns an error response with a 500 status.
+// If the short URL is successfully created, it returns a JSON response with the shortened URL.
 func ShortenHandler() http.HandlerFunc {
 	baseURL := os.Getenv("BASE_URL")
 

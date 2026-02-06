@@ -16,6 +16,11 @@ import (
 	"url-shortener-go/handlers"
 )
 
+// main is the entry point for the URL shortener application.
+// It loads environment variables, connects to the PostgreSQL database,
+// sets up routes on the router, and starts the web server.
+// It also sets up shutdown logic to close connections cleanly
+// when an interrupt signal is received.
 func main() {
 	// load env
 	_ = godotenv.Load()
