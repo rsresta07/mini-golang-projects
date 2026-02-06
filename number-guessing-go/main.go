@@ -6,6 +6,13 @@ import (
 	"time"
 )
 
+// main is the entry point of the Roast-o-matic Number Guessing Game.
+// It prompts the user to choose a difficulty, generates a random number
+// within that range, and then allows the user to guess the number.
+// The game continues until the user guesses the correct number, runs out
+// of attempts, or chooses to quit.
+//
+// The game also includes a variety of insults to keep the user entertained.
 func main() {
 	// Seed the random number generator
 	rand.Seed(time.Now().UnixNano())
