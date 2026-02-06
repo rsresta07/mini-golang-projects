@@ -2,8 +2,8 @@
 These are Mini GoLang Projects that I have done and want to do!
 
 * [x] Number Guessing Game (Roast-a-matic Number Guessing)
-* [ ] Credit Card Validator
-* [ ] Unit Converter and Currency Converter
+* [x] Credit Card Validator
+* [x] Unit Converter and Currency Converter
 * [ ] GitHub User Activity
 * [ ] Todo List API
 * [x] Blog API
@@ -30,4 +30,5 @@ These are Mini GoLang Projects that I have done and want to do!
 8. [Markdown Note Taking App](https://roadmap.sh/projects/markdown-note-taking-app)
 9. [Image Processing Service](https://roadmap.sh/projects/image-processing-service)
 10. [Space Invaders Game: Exploring Graphics and Game Development](https://www.geeksforgeeks.org/blogs/golang-projects-ideas-for-beginners/#10-space-invaders-game-exploring-graphics-and-game-development)
+
 
